@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f15591, #ffe4e1);
+    overflow: hidden;
+    position: relative;
+}
+
+.card {
+    background: hsl(0, 100%, 95%);
+    background-image: url();
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card h1 {
+    font-size: 2.5em;
+    color: #ab0c5e; /* Soft pink */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+    font-size: 1.2em;
+    color: #840b31; /* Deep maroon */
+    margin-bottom: 15px;
+}
+
+.cake {
+    width: 80%;
+    max-width: 200px;
+    margin: 10px auto;
+    border-radius: 5px;
+
+}
+
+.roses {
+    display: flex;
+    justify-content:center;
+    margin-top: 15px;
+}
+
+.rose {
+    width: 80px;
+    margin: 0 5px;
+}
+
+.button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color:#f15591 ; /* Soft pink */
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.button:hover {
+    background-color: #fd2a70; /* Darker pink */
+    transform: translateY(-2px);
+    box-shadow:1.5px 1.5px 1.5px rgb(32, 32, 32);
+}
+.mymsg:hover{
+    transform: translateY(-2px);
+    box-shadow:1.5px 1.5px 1.5px rgb(32, 32, 32);
+}
+
+.message {
+    font-size: 2.5em;
+    color: #ffffff; /* Soft pink */
+    filter:drop-shadow(2.5px 2.5px 2.5px #f53857 );
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: none;
+    animation: popIn 0.5s ease forwards;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+.message p2{
+    font-size: .5em;
+    color: #ff012c; /* Soft pink */
+    filter:drop-shadow(2.0px 2.0px 2.0px rgb(255, 255, 255));
+    margin-top: 20px;
+}
+
+/* Balloons Animation */
+.balloon {
+    position: absolute;
+    width: 60px;
+    animation: floatUp 10s linear infinite;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+/* Keyframes for balloon movement */
+@keyframes floatUp {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-120vh); }
+}
+
+/* Keyframes for pop-in effect */
+@keyframes popIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+/* Firecracker Canvas */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Responsive styling */
+@media (max-width: 480px) {
+    .card h1 {
+        font-size: 2em;
+    }
+
+    .card p {
+        font-size: 1em;
+    }
+
+    .button {
+        font-size: 0.9em;
+    }
+
+    .message {
+        font-size: 1.5em;
+    }
+}
+/* Keyframes for balloon movement */
+@keyframes floatUp {
+    0% { transform: translateY(0); } /* Start from its initial position */
+    100% { transform: translateY(-120vh); } /* Move upwards beyond the viewport */
+}
+
+
